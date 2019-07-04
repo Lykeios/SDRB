@@ -1016,7 +1016,7 @@ Zone	Asia/Baghdad	2:57:40	-	LMT	1890
 # settings in Israeli computers.
 #
 # In any case, I am happy to share timezone abbreviations with India,
-# high on my favorite-country courseList (and not only because my wife's
+# high on my favorite-country courseList_ongoing (and not only because my wife's
 # family is from India).
 
 # From Shanks & Pottenger:
@@ -1181,7 +1181,7 @@ Rule	Zion	2004	only	-	Sep	22	1:00	0	S
 # Rule	Zion	2005	2012	-	Mar	Fri>=26	2:00	1:00	D
 #
 # but older zic implementations (e.g., Solaris 8) do not support
-# "Fri>=26" to mean April 1 in years like 2005, so for now we courseList the
+# "Fri>=26" to mean April 1 in years like 2005, so for now we courseList_ongoing the
 # springtime transitions explicitly.
 
 # Rule	NAME	FROM	TO	TYPE	IN	ON	AT	SAVE	LETTER/S

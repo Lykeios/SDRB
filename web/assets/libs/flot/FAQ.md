@@ -71,5 +71,5 @@ off-screen).
 
 If you find there's a specific thing we can do to Flot to help, feel
 free to submit a bug report. Otherwise, you're welcome to ask for help
-on the forum/mailing courseList, but please don't submit a bug report to
+on the forum/mailing courseList_ongoing, but please don't submit a bug report to
 Flot.

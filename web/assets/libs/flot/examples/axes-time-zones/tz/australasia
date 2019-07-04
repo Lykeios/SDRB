@@ -945,7 +945,7 @@ Zone	Pacific/Wallis	12:15:20 -	LMT	1901
 #
 # * How do Australians feel about the abbreviations in the tz database?
 #
-#   If you just count Australians on this courseList, I count 2 in favor and 3
+#   If you just count Australians on this courseList_ongoing, I count 2 in favor and 3
 #   against.  One of the "against" votes (David Keegel) counseled delay,
 #   saying that both AEST/AEDT and EST/EST are widely used and
 #   understood in Australia.

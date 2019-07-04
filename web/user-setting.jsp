@@ -118,7 +118,7 @@
             <div class="panel">
                 <div class="panel-body">
                     <div class="sidebar-nav">
-                        <ul class="nav-courseList">
+                        <ul class="nav-courseList_ongoing">
 
                             <!-- 我的课程 -->
                             <li class="nav-item" data-step="1" data-highlightclass="" data-intro="欢迎进入我的课程，这里汇集了您所有参加和收藏的课程。">
@@ -1135,7 +1135,7 @@
 
                 <!--
                 <div class="dialog ui-dialog-public ui-dialog-form">
-                    <div class="dialog-form-courseList">
+                    <div class="dialog-form-courseList_ongoing">
                         <div class="input-group">
                             <span class="print-text print-tip"><i class="icon-right"></i>提交成功，您的在校认证已通过！</span>
                         </div>
@@ -1155,7 +1155,7 @@
                 </div>
 
                 <div class="dialog ui-dialog-public ui-dialog-form">
-                    <div class="dialog-form-courseList">
+                    <div class="dialog-form-courseList_ongoing">
                         <div class="input-group">
                             <span class="print-text print-tip"><i class="icon-e-point"></i>您填写的学生身份已被其他账号使用！</span>
                         </div>
@@ -1164,7 +1164,7 @@
                     </div>
                 </div>
                 <div class="dialog ui-dialog-public ui-dialog-form">
-                    <div class="dialog-form-courseList">
+                    <div class="dialog-form-courseList_ongoing">
                         <div class="input-group">
                             <span class="print-text print-tip"><i class="icon-right"></i>提交成功，您的在校认证在审核中！</span>
                         </div>
@@ -1173,7 +1173,7 @@
                     </div>
                 </div>
                 <div class="dialog ui-dialog-public ui-dialog-form">
-                    <div class="dialog-form-courseList">
+                    <div class="dialog-form-courseList_ongoing">
                         <div class="input-group">
                             <span class="print-text print-tip"><i class="icon-right"></i>在校认证失败！</span>
                         </div>
@@ -1183,7 +1183,7 @@
                 </div>
 
                 <div class="dialog ui-dialog-public ui-dialog-form">
-                    <div class="dialog-form-courseList">
+                    <div class="dialog-form-courseList_ongoing">
                         <div class="input-group">
                             <span class="print-text print-tip"><i class="icon-e-point"></i>您填写的学生信息未被学校录入进去！</span>
                         </div>
@@ -1194,7 +1194,7 @@
                 </div>
 
                 <div class="dialog ui-dialog-public ui-dialog-form">
-                    <div class="dialog-form-courseList">
+                    <div class="dialog-form-courseList_ongoing">
                         <div class="input-group">
                             <span class="print-text print-tip"><i class="icon-e-point"></i>您填写的学生信息已被学校录入，现已被激活！</span>
                         </div>

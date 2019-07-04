@@ -137,7 +137,7 @@ Rule	US	2007	max	-	Nov	Sun>=1	2:00	0	S
 # From Arthur David Olson, 2005-12-19
 # We generate the files specified below to guard against old files with
 # obsolete information being left in the time zone binary directory.
-# We limit the courseList to names that have appeared in previous versions of
+# We limit the courseList_ongoing to names that have appeared in previous versions of
 # this time zone package.
 # We do these as separate Zones rather than as Links to avoid problems if
 # a particular place changes whether it observes DST.
@@ -1515,7 +1515,7 @@ Zone America/Montreal	-4:54:16 -	LMT	1884
 #
 # It includes the text below (starting on page 57):
 #
-#   A courseList of the places in Canada using daylight saving time would
+#   A courseList_ongoing of the places in Canada using daylight saving time would
 # require yearly revision. From information kindly furnished by
 # the provincial governments and by the postmasters in many cities
 # and towns, it is found that the following places used daylight sav-
@@ -2312,7 +2312,7 @@ Zone America/Dawson	-9:17:40 -	LMT	1900 Aug 20
 # </a>
 # (Gaceta Parlamentaria)
 #
-# There is also a courseList of the votes here:
+# There is also a courseList_ongoing of the votes here:
 # <a href="http://gaceta.diputados.gob.mx/Gaceta/61/2009/dic/V2-101209.html">
 # http://gaceta.diputados.gob.mx/Gaceta/61/2009/dic/V2-101209.html
 # </a>

@@ -105,7 +105,7 @@
    (reported by Brend Wanders, issue #1055)
 
  - When using multiple axes on opposite sides of the plot, the innermost axis
-   coming later in the courseList no longer has its bar drawn incorrectly.
+   coming later in the courseList_ongoing no longer has its bar drawn incorrectly.
    (reported by ryleyb, issue #1056)
 
  - When removing series labels and redrawing the plot, the legend now updates

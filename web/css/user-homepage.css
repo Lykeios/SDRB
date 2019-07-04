@@ -1,7 +1,8 @@
 .content {
     width: 70%;
     margin-left: 15%;
-    min-height: 1200px;
+    min-height:600px;
+    overflow: hidden;
     padding: 30px;
     position: relative;
     background-color: #fff;
@@ -222,13 +223,13 @@ fieldset, img {
     position: relative;
 }
 .tab-view:first-child {
-    display: block;
+    display: inline-block;
 }
 .tab-view {
-    display: none;
+    display: inline-block;
 }
 .view-item {
-    margin-bottom: 10px;
+    padding-bottom: 10px;
 }
 .soon-item{
     margin-bottom: 10px;

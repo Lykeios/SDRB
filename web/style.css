@@ -16,6 +16,11 @@ img {
 --------------------------------------------------------------*/
 a {
     color: #383749;
+    outline:none;
+}
+
+a:focus {
+    outline:none;
 }
 
 a:visited {
@@ -24,10 +29,6 @@ a:visited {
 
 a:hover, a:focus, a:active {
     color: #383749;
-}
-
-a:focus {
-    outline: thin dotted;
 }
 
 a:hover, a:active {

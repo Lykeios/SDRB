@@ -122,7 +122,7 @@
             <div class="panel">
                 <div class="panel-body">
                     <div class="sidebar-nav">
-                        <ul class="nav-courseList">
+                        <ul class="nav-courseList_ongoing">
 
                             <!-- 我的课程 -->
                             <li class="nav-item open-up navItem" data-step="1" data-highlightclass="" data-intro="欢迎进入我的课程，这里汇集了您所有参加和收藏的课程。">
@@ -300,11 +300,11 @@
                 <div class="main-tab">
                     <div class="tab-view">
 
-                        <ul class="view-courseList">
+                        <ul class="view-courseList_ongoing">
 
                             <!-- 正在进行 -->
 
-                            <s:iterator value="courseList" status="status">
+                            <s:iterator value="courseList_ongoing" status="status">
 
                                 <li class="view-item" ucid="1277078">
                                 <div class="view">
@@ -386,12 +386,13 @@
 
                             </s:iterator>
                             <!-- 即将开始 -->
+                            <s:iterator value="courseList_coming" status="status">
                             <li class="soon-item hidden-course" ucid="1277078">
                                 <div class="view">
                                     <div class="view-show">
 
                                         <div class="view-img" href="javascript:void(0)">
-                                            <img src="images/ZYNCJZ.jpg">
+                                            <img src="<s:property value="Course_Image"/>">
                                             <a class="view-shadow" href="https://www.cnmooc.org/portal/session/index/11846.mooc" style="top: 0px; left: -982px;">
                                                 <div class="view-tips view-action">
                                                     <i class="icon-play"></i>去学习
@@ -402,7 +403,7 @@
                                     <div class="view-intro">
                                         <h3 class="view-title substr" style="width:400px;">
 
-                                            怎样怒斥记者
+                                            <s:property value="Course_Name"/>
 
 
                                             <span class="cview-time">2020春</span>
@@ -412,7 +413,7 @@
 
 
                                         <h4 class="view-subtitle">
-                                            <span class="show-tname substr" style="width:180px;"><a class="link-action" href="/portal/teacher/11846/524530.mooc" title="江主席"><img src="images/JZM.jpg" class="user-min">江泽民</a></span>
+                                            <span class="show-tname substr" style="width:180px;"><a class="link-action" href="/portal/teacher/11846/524530.mooc" title="江主席"><img src="images/JZM.jpg" class="user-min"><s:property value="Course_Teacher"/></a></span>
                                             <span class="show-school substr"></span>
                                         </h4>
                                         <!-- 学期学习 -->
@@ -420,8 +421,7 @@
                                         <div class="view-handle clearfix">
                                             <!-- 学期学习 -->
 
-                                            <span class="view-tip"><i class="icon-clock01"></i>36周</span>
-                                            <span class="view-tip"><i class="icon-cycle01"></i>1小时/周</span>
+                                            <s:property value="Course_Intro"/>
 
 
                                             <!-- 随到随学 -->
@@ -429,7 +429,6 @@
 
                                             <div class="link-group">
                                                 <a class="link-action courseDetail" href="/portal/session/11846-study.mooc">课程详情</a>
-                                                <a class="link-action totalReport" href="/portal/session/to/studystatistics-11846.mooc">学习统计</a>
 
                                             </div>
                                         </div>
@@ -444,8 +443,7 @@
                                         <div class="view-progressbar pc-progressbar">
                                             <div class="progressbar-ui">
                                                 <div class="progressbar-value">
-                                                    <span class="start-value">2020-01-11</span>
-                                                    <span class="end-value">2020-04-08</span>
+                                                    <span class="start-value"><s:property value="Course_Date"/></span>
                                                 </div>
                                                 <div class="progressbar-bg">
                                                     <div class="progressbar-in" style="width: 58%;"></div>
@@ -467,7 +465,7 @@
                                     </div>
                                 </div>
                             </li>
-
+                            </s:iterator>
                             <!-- 已结束 -->
                             <li class="finished-item hidden-course" ucid="1277078">
                                 <div class="view">
@@ -734,7 +732,7 @@
         }
     });
 </script>
-
+<script src="js/bootstrap.min.js"></script>
 
 
 </body>

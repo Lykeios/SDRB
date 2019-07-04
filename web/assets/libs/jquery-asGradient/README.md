@@ -274,7 +274,7 @@ gulp build
 More gulp tasks can be found [here](CONTRIBUTING.md#available-tasks).
 
 ## Changelog
-To see the courseList of recent changes, see [Releases section](https://github.com/amazingSurge/jquery-asGradient/releases).
+To see the courseList_ongoing of recent changes, see [Releases section](https://github.com/amazingSurge/jquery-asGradient/releases).
 
 ## Copyright and license
 Copyright (C) 2016 amazingSurge.

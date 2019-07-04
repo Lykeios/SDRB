@@ -168,7 +168,7 @@
                     <div class="post-comments">
                         <h3 class="comments-title"><span class="comments-number"><%=CommentArrayList.size()%> Comments</span></h3>
 
-                        <ol class="comment-courseList">
+                        <ol class="comment-courseList_ongoing">
                             <%
                                 if(CommentArrayList != null && CommentArrayList.size()>0)
                                 {
@@ -336,7 +336,7 @@
                                     }
                                 }
                             %>
-                        </ol><!-- .comment-courseList -->
+                        </ol><!-- .comment-courseList_ongoing -->
                     </div><!-- .post-comments -->
 
                     <div class="comments-form">
