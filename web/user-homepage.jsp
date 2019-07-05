@@ -279,8 +279,9 @@
 
 
         <div class="main">
+            <s:if test="#session.user.User_Identity == 1">
             <div class="main-header">
-                <div class="btn-group btn-tabs" id="mycoursecenter">
+                <div class="btn-group btn-tabs" id="mycoursecenter_student">
                     <a class="btn-item current" href="javascript:void(0);" tabindex="1">正在进行</a>
                     <a class="btn-item" href="javascript:void(0);" tabindex="2">即将开始</a>
                     <a class="btn-item last" href="javascript:void(0);" tabindex="3">已结束</a>
@@ -288,14 +289,15 @@
                 </div>
                 <div class="search-box">
                     <div class="search">
-                        <input class="input-search searchCourse" id="keyWord" placeholder="根据课程名称、学校、教师搜索" type="text" value="">
-                        <a class="icon-search" id="searchCourse" href="javascript:void(0)"><i class="i-search"></i></a>
+                        <input class="input-search searchCourse" id="keyWord_student" placeholder="根据课程名称、学校、教师搜索" type="text" value="">
+                        <a class="icon-search" id="searchCourse_student" href="javascript:void(0)"><i class="i-search"></i></a>
                     </div>
                 </div>
             </div>
 
 
             <div class="main-body" id="myCourse">
+
 
                 <div class="main-tab">
                     <div class="tab-view">
@@ -386,6 +388,7 @@
 
                             </s:iterator>
                             <!-- 即将开始 -->
+
                             <s:iterator value="courseList_coming" status="status">
                             <li class="soon-item hidden-course" ucid="1277078">
                                 <div class="view">
@@ -467,12 +470,14 @@
                             </li>
                             </s:iterator>
                             <!-- 已结束 -->
+
+                            <s:iterator value="courseList_finished" status="status">
                             <li class="finished-item hidden-course" ucid="1277078">
                                 <div class="view">
                                     <div class="view-show">
 
                                         <div class="view-img" href="javascript:void(0)">
-                                            <img src="images/ZYCSBL.jpg">
+                                            <img src="<s:property value="Course_Image"/>">
                                             <a class="view-shadow" href="https://www.cnmooc.org/portal/session/index/11846.mooc" style="top: 0px; left: -982px;">
                                                 <div class="view-tips view-action">
                                                     <i class="icon-play"></i>去学习
@@ -483,7 +488,7 @@
                                     <div class="view-intro">
                                         <h3 class="view-title substr" style="width:400px;">
 
-                                            怎样长生不老
+                                            <s:property value="Course_Name"/>
 
 
                                             <span class="cview-time">2018秋</span>
@@ -493,7 +498,7 @@
 
 
                                         <h4 class="view-subtitle">
-                                            <span class="show-tname substr" style="width:180px;"><a class="link-action" href="/portal/teacher/11846/524530.mooc" title="江主席"><img src="images/JZM.jpg" class="user-min">江泽民</a></span>
+                                            <span class="show-tname substr" style="width:180px;"><a class="link-action" href="/portal/teacher/11846/524530.mooc" title="江主席"><img src="images/JZM.jpg" class="user-min"><s:property value="Course_Teacher"/></a></span>
                                             <span class="show-school substr"></span>
                                         </h4>
                                         <!-- 学期学习 -->
@@ -501,8 +506,7 @@
                                         <div class="view-handle clearfix">
                                             <!-- 学期学习 -->
 
-                                            <span class="view-tip"><i class="icon-clock01"></i>24周</span>
-                                            <span class="view-tip"><i class="icon-cycle01"></i>1.5小时/周</span>
+                                            <s:property value="Course_Intro"/>
 
 
                                             <!-- 随到随学 -->
@@ -510,7 +514,6 @@
 
                                             <div class="link-group">
                                                 <a class="link-action courseDetail" href="/portal/session/11846-study.mooc">课程详情</a>
-                                                <a class="link-action totalReport" href="/portal/session/to/studystatistics-11846.mooc">学习统计</a>
 
                                             </div>
                                         </div>
@@ -525,8 +528,7 @@
                                         <div class="view-progressbar pc-progressbar">
                                             <div class="progressbar-ui">
                                                 <div class="progressbar-value">
-                                                    <span class="start-value">2018-09-11</span>
-                                                    <span class="end-value">2019-03-16</span>
+                                                    <span class="start-value"><s:property value="Course_Date"/></span>
                                                 </div>
                                                 <div class="progressbar-bg">
                                                     <div class="progressbar-in" style="width: 58%;"></div>
@@ -548,6 +550,7 @@
                                     </div>
                                 </div>
                             </li>
+                            </s:iterator>
 
 
 <!--
@@ -646,6 +649,7 @@
 
                     </div>
                 </div>
+
                 <script src="/js/app/portal/ajaxmyCourseIndex.js?c10f4345bd" type="text/javascript"></script>
                 <script type="text/javascript">
                     $(function(){
@@ -687,6 +691,418 @@
                     }
 
                 </script></div>
+            </s:if>
+
+            <s:if test="#session.user.User_Identity == 2">
+                <div class="main-header">
+                    <div class="btn-group btn-tabs" id="mycoursecenter_teacher">
+                        <a class="btn-item current" href="javascript:void(0);" tabindex="1">申请通过</a>
+                        <a class="btn-item" href="javascript:void(0);" tabindex="2">等待批准</a>
+                        <a class="btn-item last" href="javascript:void(0);" tabindex="3">已结束</a>
+
+                    </div>
+                    <div class="search-box">
+                        <div class="search">
+                            <input class="input-search searchCourse" id="keyWord_teacher" placeholder="根据课程名称、学校、教师搜索" type="text" value="">
+                            <a class="icon-search" id="searchCourse_teacher" href="javascript:void(0)"><i class="i-search"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="main-body" id="myCourse">
+
+
+                    <div class="main-tab">
+                        <div class="tab-view">
+
+                            <ul class="view-courseList_ongoing">
+
+                                <!-- 正在进行 -->
+
+                                <s:iterator value="courseList_ongoing" status="status">
+
+                                    <li class="view-item" ucid="1277078">
+                                        <div class="view">
+                                            <div class="view-show">
+                                                <div class="view-img" href="javascript:void(0)">
+                                                    <img src="<s:property value="Course_Image"/>">
+                                                    <a class="view-shadow" href="https://www.cnmooc.org/portal/session/index/11846.mooc" style="top: 0px; left: -982px;">
+                                                        <div class="view-tips view-action">
+                                                            <i class="icon-play"></i>去学习
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="view-intro">
+                                                <h3 class="view-title substr" style="width:400px;">
+
+                                                    <s:property value="Course_Name"/>
+
+
+                                                    <span class="cview-time">2019春</span>
+                                                </h3>
+
+
+
+
+                                                <h4 class="view-subtitle">
+                                                    <span class="show-tname substr" style="width:180px;"><a class="link-action" href="/portal/teacher/11846/524530.mooc" title="江主席"><img src="images/JZM.jpg" class="user-min"><s:property value="Course_Teacher"/></a></span>
+                                                    <span class="show-school substr"></span>
+                                                </h4>
+                                                <!-- 学期学习 -->
+
+                                                <div class="view-handle clearfix">
+                                                    <!-- 学期学习 -->
+
+                                                    <span class="view-tip"><s:property value="Course_Intro"/></span>
+
+
+                                                    <!-- 随到随学 -->
+
+
+                                                    <div class="link-group">
+                                                        <a class="link-action courseDetail" href="single-courses.jsp?course_id=<s:property value="Course_Id"/>">课程详情</a>
+
+                                                    </div>
+                                                </div>
+
+                                                <!-- 学期学习 -->
+
+                                                <!-- 有成绩 -->
+
+
+                                                <!-- 无成绩 -->
+
+                                                <div class="view-progressbar pc-progressbar">
+                                                    <div class="progressbar-ui">
+                                                        <div class="progressbar-value">
+                                                            <span class="start-value"><s:property value="Course_Date"/></span>
+                                                        </div>
+                                                        <div class="progressbar-bg">
+                                                            <div class="progressbar-in" style="width: 58%;"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+
+                                                <!-- 随到随学 -->
+
+
+
+                                                <i class="view-state-v normal" title="修学分课程"></i>
+
+
+                                                <!-- 证书 -->
+
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                </s:iterator>
+                                <!-- 即将开始 -->
+                                <s:iterator value="courseList_coming" status="status">
+                                    <li class="soon-item hidden-course" ucid="1277078">
+                                        <div class="view">
+                                            <div class="view-show">
+
+                                                <div class="view-img" href="javascript:void(0)">
+                                                    <img src="<s:property value="Course_Image"/>">
+                                                    <a class="view-shadow" href="https://www.cnmooc.org/portal/session/index/11846.mooc" style="top: 0px; left: -982px;">
+                                                        <div class="view-tips view-action">
+                                                            <i class="icon-play"></i>去学习
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="view-intro">
+                                                <h3 class="view-title substr" style="width:400px;">
+
+                                                    <s:property value="Course_Name"/>
+
+
+                                                    <span class="cview-time">2020春</span>
+                                                </h3>
+
+
+
+
+                                                <h4 class="view-subtitle">
+                                                    <span class="show-tname substr" style="width:180px;"><a class="link-action" href="/portal/teacher/11846/524530.mooc" title="江主席"><img src="images/JZM.jpg" class="user-min"><s:property value="Course_Teacher"/></a></span>
+                                                    <span class="show-school substr"></span>
+                                                </h4>
+                                                <!-- 学期学习 -->
+
+                                                <div class="view-handle clearfix">
+                                                    <!-- 学期学习 -->
+
+                                                    <s:property value="Course_Intro"/>
+
+
+                                                    <!-- 随到随学 -->
+
+
+                                                    <div class="link-group">
+                                                        <a class="link-action courseDetail" href="/portal/session/11846-study.mooc">课程详情</a>
+
+                                                    </div>
+                                                </div>
+
+                                                <!-- 学期学习 -->
+
+                                                <!-- 有成绩 -->
+
+
+                                                <!-- 无成绩 -->
+
+                                                <div class="view-progressbar pc-progressbar">
+                                                    <div class="progressbar-ui">
+                                                        <div class="progressbar-value">
+                                                            <span class="start-value"><s:property value="Course_Date"/></span>
+                                                        </div>
+                                                        <div class="progressbar-bg">
+                                                            <div class="progressbar-in" style="width: 58%;"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+
+                                                <!-- 随到随学 -->
+
+
+
+                                                <i class="view-state-v normal" title="修学分课程"></i>
+
+
+                                                <!-- 证书 -->
+
+                                            </div>
+                                        </div>
+                                    </li>
+                                </s:iterator>
+                                                                    <!-- 已结束 -->
+                                <s:iterator value="courseList_finished" status="status">
+                                    <li class="finished-item hidden-course" ucid="1277078">
+                                        <div class="view">
+                                            <div class="view-show">
+
+                                                <div class="view-img" href="javascript:void(0)">
+                                                    <img src="<s:property value="Course_Image"/>">
+                                                    <a class="view-shadow" href="https://www.cnmooc.org/portal/session/index/11846.mooc" style="top: 0px; left: -982px;">
+                                                        <div class="view-tips view-action">
+                                                            <i class="icon-play"></i>去学习
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="view-intro">
+                                                <h3 class="view-title substr" style="width:400px;">
+
+                                                    <s:property value="Course_Name"/>
+
+
+                                                    <span class="cview-time">2018秋</span>
+                                                </h3>
+
+
+
+
+                                                <h4 class="view-subtitle">
+                                                    <span class="show-tname substr" style="width:180px;"><a class="link-action" href="/portal/teacher/11846/524530.mooc" title="江主席"><img src="images/JZM.jpg" class="user-min"><s:property value="Course_Teacher"/></a></span>
+                                                    <span class="show-school substr"></span>
+                                                </h4>
+                                                <!-- 学期学习 -->
+
+                                                <div class="view-handle clearfix">
+                                                    <!-- 学期学习 -->
+
+                                                    <s:property value="Course_Intro"/>
+
+
+                                                    <!-- 随到随学 -->
+
+
+                                                    <div class="link-group">
+                                                        <a class="link-action courseDetail" href="/portal/session/11846-study.mooc">课程详情</a>
+
+                                                    </div>
+                                                </div>
+
+                                                <!-- 学期学习 -->
+
+                                                <!-- 有成绩 -->
+
+
+                                                <!-- 无成绩 -->
+
+                                                <div class="view-progressbar pc-progressbar">
+                                                    <div class="progressbar-ui">
+                                                        <div class="progressbar-value">
+                                                            <span class="start-value"><s:property value="Course_Date"/></span>
+                                                        </div>
+                                                        <div class="progressbar-bg">
+                                                            <div class="progressbar-in" style="width: 58%;"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+
+                                                <!-- 随到随学 -->
+
+
+
+                                                <i class="view-state-v normal" title="修学分课程"></i>
+
+
+                                                <!-- 证书 -->
+
+                                            </div>
+                                        </div>
+                                    </li>
+                                </s:iterator>
+
+                                <!--
+                                                            <div class="pagination" id="pageId">
+                                                                <ul class="clearfix">
+                                                                    <li class="page-dropdown">
+                                                                        <span class="factor-item" id="rowCountNum">1条记录</span>
+                                                                    </li>
+
+                                                                    <li class="page-prev">
+                                                                        <a href="javascript:void(0);" id="page-prev" pagenum="1">‹</a>
+                                                                    </li>
+                                                                    <li class="page-num current">
+                                                                        <a href="javascript:void(0);" pagenum="1">1</a>
+                                                                    </li>
+
+                                                                    <li class="page-next">
+                                                                        <a href="javascript:void(0);" id="page-next" pagenum="1">›</a>
+                                                                    </li>
+                                                                    <li class="page-action">
+                                                                        <input type="text" class="input-text input-page" title="Enter Search" _type="changeIndex">
+                                                                        <span class="page-total">/1 页 </span>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                    -->
+
+                                <script>
+                                    $(function () {
+                                        $("#rowCountNum").html(1 + "条记录");
+                                        var $pageSelect = $("#pageId").find(".page-select").select({
+                                            change:function(){
+                                                if (this.value == '10') {
+                                                    return;
+                                                }
+                                                var fn = "";
+
+                                                if (fn.length > 0) {
+                                                    fn = fn+"(" + 1 + ",\""+"pageId"+"\","+this.value+")";
+                                                    eval(fn);
+                                                } else {
+                                                    gotoPage(1, "pageId",this.value);
+                                                }
+                                            }
+                                        });
+
+                                        $("#pageId").find(".page-num,.page-prev,.page-next").click(function () {
+                                            var pageNum = $(this).children('a').attr("pageNum");
+                                            if (typeof(pageNum) == 'undefined') {
+                                                return;
+                                            }
+                                            if (pageNum == '1') {
+                                                return;
+                                            }
+                                            var fn = "";
+
+                                            if (fn.length > 0) {
+                                                fn = fn+"(" + pageNum + ",\""+"pageId"+"\","+$pageSelect.val()+")";
+                                                eval(fn);
+                                            } else {
+                                                gotoPage && gotoPage(pageNum, "pageId", $pageSelect.val());
+                                            }
+                                        })
+                                        $("#pageId").find('[_type="changeIndex"]').on("keyup.changeIndex", function (event) {
+                                            var $this = $(this);
+                                            if ($.trim($this.val()||"").length > 0) {
+                                                var pageNum = parseInt($this.val())
+                                                if (isNaN(pageNum)) {
+                                                    pageNum = 0;
+                                                }
+                                                if (pageNum > "1") {
+                                                    pageNum = " 1" || 0;
+                                                }
+                                                if (pageNum < 1) {
+                                                    pageNum = 1
+                                                }
+                                                if (pageNum == '1') {
+                                                    return;
+                                                }
+                                                if (event.keyCode == 13) {
+                                                    var fn = "";
+
+                                                    if (fn.length > 0) {
+                                                        fn = fn+"(" + pageNum + ",\""+"pageId"+"\","+$pageSelect.val()+")";
+                                                        eval(fn);
+                                                    } else {
+                                                        gotoPage(pageNum, "pageId", $pageSelect.val());
+                                                    }
+                                                }
+                                            }
+
+                                        })
+                                    })
+                                </script>
+                            </ul>
+
+                        </div>
+                    </div>
+
+                    <script src="/js/app/portal/ajaxmyCourseIndex.js?c10f4345bd" type="text/javascript"></script>
+                    <script type="text/javascript">
+                        $(function(){
+                            formatAvatar(".show-tname img");
+
+                        })
+                        function checkSystem(){
+                            var isPc =true;
+                            var browser={
+                                versions:function(){
+                                    var u = navigator.userAgent;
+                                    return {//移动终端浏览器版本信息          　　
+                                        trident: u.indexOf('Trident') > -1, //IE内核　　
+                                        presto: u.indexOf('Presto') > -1, //opera内核
+                                        webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+                                        gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+                                        mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+                                        ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+                                        android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或uc浏览器
+                                        iPhone: u.indexOf('iPhone') > -1 , //是否为iPhone或者QQHD浏览器
+                                        iPad: u.indexOf('iPad') > -1, //是否iPad
+                                        webApp: u.indexOf('Safari') == -1 //是否web应该程序，没有头部与底部
+                                    };
+                                }()
+
+                            }
+                            if(browser.versions.mobile){
+                                isPc = false;
+                                $.warn("章节暂时不支持移动端进行浏览！");
+                            }
+                            return isPc;
+                        }
+                        function gotoPage(pageIndex, pageId) {
+                            var keyWord = $("#keyWord").val();
+                            var tabIndex = $("#tabIndex").val();
+                            var searchType = $("#searchType").val();
+                            var schoolcourseType = $("#schoolcourseType").val();
+                            searchMyCourse(keyWord,tabIndex,searchType,schoolcourseType,pageIndex);
+                        }
+
+                    </script></div>
+            </s:if>
         </div>
         <div id="viewUserGrade"></div>
         <script src="/js/plugins/jquery.history.js" type="text/javascript"></script>
